@@ -3,7 +3,7 @@ resource "aws_instance" "web" {
   instance_type = "t2.micro"
 
 
-  key_name = "meryems_terra_key"
+  key_name = "${aws_key_pair.ec2-ireland1.key_name}"
   security_groups = ["${aws_security_group.allow_tls.name}"]
 
 
