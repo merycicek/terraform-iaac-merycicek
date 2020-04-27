@@ -15,3 +15,6 @@ output "key_name" {
 output "actual_key" {
   value = "${aws_key_pair.ec2-ireland2.public_key}"
 }
+output "actual_key" {
+  value = "${aws_key_pair.ec2-ireland2.id}"
+}
