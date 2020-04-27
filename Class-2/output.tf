@@ -12,3 +12,6 @@ resource "aws_key_pair" "ec2-ireland2" {
 output "key_name" {
   value = "${aws_key_pair.ec2-ireland2.key_name}"
 }
+output "actual_key" {
+  value = "${aws_key_pair.ec2-ireland2.public_key}"
+}
