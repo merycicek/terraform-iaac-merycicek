@@ -21,12 +21,12 @@ resource "aws_security_group" "allow_tls" {
 name = "terraform_task" 
   
 }
-resource "aws_route53_record" "web2"{
+resource "aws_route53_record" "www"{
  zone_id = "Z05078902NX01H5WLBV6I" 
  name = "merycicek.com"  
  type    = "NS"
  ttl = "3"
- record = "${aws_instance.web-output.public_ip}"
+ records = [ "${aws_instance.web-output.public_ip}"]
      
 }
 
