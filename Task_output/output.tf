@@ -22,7 +22,7 @@ name = "terraform_task"
   
 }
 resource "aws_route53_record" "www"{
- zone_id = "Z05078902NX01H5WLBV6I" 
+ zone_id = "Z02550487Q5F0WF6SP6V" 
  name = "pacikamerycicek.com"  
  type    = "A"
  ttl = "300"
