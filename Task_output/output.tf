@@ -24,7 +24,7 @@ name = "terraform_task"
 resource "aws_route53_record" "web"{
       zone_id = "ZONE_ID" 
 
-    name = "www.${var.mydomain1}"  
+    name = "mydomain.merycicek.com"  
 
     type    = "A"
      
