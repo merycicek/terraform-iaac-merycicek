@@ -1,20 +1,7 @@
-output "name" {
-  value = "meryem"
-}
-output "lastname" {
-  value = "Elibal"
-}
-resource "aws_key_pair" "ec2-ireland2" {
-  key_name   = "meryems_terra_key2"
-  public_key = "${file("~/.ssh/id_rsa.pub")}"
-}
-
-output "key_name" {
-  value = "${aws_key_pair.ec2-ireland2.key_name}"
-}
-output "actual_key" {
-  value = "${aws_key_pair.ec2-ireland2.public_key}"
-}
-output "actual_key_id" {
-  value = "${aws_key_pair.ec2-ireland2.id}"
+resource "aws_instance" "web" {
+  ami           = "ami-0323c3dd2da7fb37d"
+  instance_type = "t2.micro"
+  tags = {
+    Name = "HelloWorld"
+  }
 }
