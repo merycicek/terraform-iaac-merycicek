@@ -22,7 +22,7 @@ name = "terraform_task"
   
 }
 resource "aws_route53_record" "web1"{
- zone_id = "${aws_route53_zone.web1.id}" 
+ zone_id = "${aws_route53_record.web1.id}" 
 
     name = "mydomain.merycicek.com"  
 
