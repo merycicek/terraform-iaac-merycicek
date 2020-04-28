@@ -23,8 +23,8 @@ name = "terraform_task"
 }
 resource "aws_route53_record" "www"{
  zone_id = "Z05078902NX01H5WLBV6I" 
- name = "merycicek.com"  
- type    = "NS"
+ name = "dev.pacikamerycicek.com"  
+ type    = "A"
  ttl = "3"
  records = [ "${aws_instance.web-output.public_ip}"]
      
