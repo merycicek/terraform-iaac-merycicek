@@ -32,6 +32,15 @@ output "key_pair" {
 output "instance_id" {
   value = "${aws_instance.web-output.id}"
 }
+ output "instance_arn"{
+   value = "${aws_instance.web-output.arn}"
+ }
 
+ output "instance_ip" {
+   value = "${instance_id.web-output.public_ip}"
+ }
+ output "my_message" {
+   value = "Please login and change your passwd "
+ }
 
 
