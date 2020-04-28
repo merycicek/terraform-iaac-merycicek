@@ -37,7 +37,7 @@ output "instance_id" {
  }
 
  output "instance_ip" {
-   value = "${instance_id.web-output.public_ip}"
+   value = "${aws_instance.web-output.public_ip}"
  }
  output "my_message" {
    value = "Please login and change your passwd "
