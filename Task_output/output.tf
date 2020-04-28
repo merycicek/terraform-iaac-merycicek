@@ -21,8 +21,8 @@ resource "aws_security_group" "allow_tls" {
 name = "terraform_task" 
   
 }
-resource "aws_route53_record" "web"{
- zone_id = "${aws_route53_record.web.id}" 
+resource "aws_route53_record" "web1"{
+ zone_id = "${aws_route53_zone.web1.id}" 
 
     name = "mydomain.merycicek.com"  
 
