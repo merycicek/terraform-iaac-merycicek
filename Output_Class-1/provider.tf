@@ -10,10 +10,11 @@ resource "aws_key_pair" "ec2-ireland2" {
 
   
 }
-
-
-
 // Creates Instance
+resource "aws_instance" "web-output" {
+  ami           = "ami-06ce3edf0cff21f07"
+  instance_type = "t2.micro"
+}
 
 
 // Creates sec group
@@ -27,5 +28,10 @@ resource "aws_key_pair" "ec2-ireland2" {
 output "key_pair" {
   value = "${aws_key_pair.ec2-ireland2.key_name}"
 }
+
+output "instance_id" {
+  value = "${aws_instance.web-output.id}"
+}
+
 
 
