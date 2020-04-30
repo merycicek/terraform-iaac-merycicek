@@ -32,8 +32,11 @@ resource "aws_security_group" "allow_tls" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = {
-    Name = "task3_terraform"
+   tags = {
+    Enviroment = "Dev"
+    Department = "IT"
+    Team = "infrastructure"
+    Created_by = "Meryem"
   }
 }
 resource "aws_ebs_volume" "web" {
@@ -52,11 +55,4 @@ resource "aws_volume_attachment" "web_data_vol_att" {
   device_name = "${element(var.data_volume_device_list, count.index )}"
   volume_id   = "${element(aws_ebs_volume.web.*.id, count.index)}"
   instance_id = "${element(aws_instance.web.*.id, count.index)}"
-}
-resource "aws_route53_record" "www" {
-  zone_id = "Z049827916KCYTT0YP07G"
-  name    = "www.real.indianagulu.com"
-  type    = "A"
-  ttl     = "300"
-  records = ["${aws_instance.web.public_ip}"]
 }
