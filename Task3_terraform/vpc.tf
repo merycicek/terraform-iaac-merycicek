@@ -2,17 +2,7 @@ resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
 }
 
-resource "aws_subnet" "main" {
-    count = 3
-    vpc_id     = "${aws_vpc.main.id}"
-    cidr_block = "10.0.${count.index +1}.0/24"
-}
 
-resource "aws_subnet" "public" {
-    count = 3
-    vpc_id     = "${aws_vpc.main.id}"
-    cidr_block = "10.0.10${count.index +1}.0/24"
-}
 
 resource "aws_internet_gateway" "gw" {
   vpc_id = "${aws_vpc.main.id}"
@@ -49,6 +39,3 @@ resource "aws_route_table_association" "public" {
 }
 
 
-resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
-}

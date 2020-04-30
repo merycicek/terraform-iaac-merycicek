@@ -40,10 +40,13 @@ resource "aws_security_group" "allow_tls" {
   }
 }
 resource "aws_ebs_volume" "web" {
-  availability_zone = "us-west-2a"
+  availability_zone = "us-east-2a"
   size              = 100
-  tags = {
-    Name = "HelloWorld"
+   tags = {
+    Enviroment = "Dev"
+    Department = "IT"
+    Team = "infrastructure"
+    Created_by = "Meryem"
   }
 }
 variable "data_volume_device_list" {
