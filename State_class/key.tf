@@ -4,3 +4,6 @@ resource "aws_key_pair" "us-east-1-key" {
 
   
 }
+resource "aws_instance" "web" {
+  # (resource arguments)
+}
